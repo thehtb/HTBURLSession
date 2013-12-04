@@ -9,7 +9,7 @@
 #import "HTBViewController.h"
 #import "HTBURLSession.h"
 
-@interface HTBViewController () <NSURLSessionDownloadDelegate>
+@interface HTBViewController () <NSURLSessionDelegate>
 
 @property (nonatomic, readonly) HTBURLSession * urlSession;
 @property (weak, nonatomic) IBOutlet UIProgressView * progressView;
