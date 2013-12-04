@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EYk-zG-hiC">
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalCompressionResistancePriority="1000" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EYk-zG-hiC">
                                 <rect key="frame" x="254" y="518" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="GET">
@@ -26,13 +26,39 @@
                                     <action selector="get:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="M4Z-V4-TOF"/>
                                 </connections>
                             </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VVY-O7-jle">
+                                <rect key="frame" x="20" y="532" width="198" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="oa8-6B-cX1">
+                                <rect key="frame" x="226" y="523" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OWy-yi-dQj">
+                                <rect key="frame" x="0.0" y="0.0" width="321" height="510"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="OWy-yi-dQj" secondAttribute="trailing" id="CFe-Xg-9JO"/>
+                            <constraint firstItem="OWy-yi-dQj" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="ElH-CG-q7F"/>
+                            <constraint firstItem="oa8-6B-cX1" firstAttribute="centerY" secondItem="EYk-zG-hiC" secondAttribute="centerY" id="IKK-hT-gzO"/>
+                            <constraint firstItem="OWy-yi-dQj" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="KUJ-So-Af1"/>
+                            <constraint firstItem="EYk-zG-hiC" firstAttribute="top" secondItem="OWy-yi-dQj" secondAttribute="bottom" constant="8" symbolic="YES" id="PsB-Hj-db8"/>
                             <constraint firstAttribute="trailing" secondItem="EYk-zG-hiC" secondAttribute="trailing" constant="20" symbolic="YES" id="XiD-r2-hEX"/>
+                            <constraint firstItem="EYk-zG-hiC" firstAttribute="centerY" secondItem="VVY-O7-jle" secondAttribute="centerY" id="YbF-gS-YGA"/>
                             <constraint firstItem="u97-0r-dNb" firstAttribute="top" secondItem="EYk-zG-hiC" secondAttribute="bottom" constant="20" symbolic="YES" id="Zze-Ea-GQN"/>
+                            <constraint firstItem="VVY-O7-jle" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="mTP-fi-7Q6"/>
+                            <constraint firstItem="EYk-zG-hiC" firstAttribute="leading" secondItem="oa8-6B-cX1" secondAttribute="trailing" constant="8" symbolic="YES" id="tRA-Qi-a3k"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activityView" destination="oa8-6B-cX1" id="NTb-TY-OF2"/>
+                        <outlet property="getButton" destination="EYk-zG-hiC" id="F9p-dw-id6"/>
+                        <outlet property="imageView" destination="OWy-yi-dQj" id="SAb-nl-cFt"/>
+                        <outlet property="progressView" destination="VVY-O7-jle" id="ALm-g1-pER"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
