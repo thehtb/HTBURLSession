@@ -1,4 +1,6 @@
-# HTBURLSession - A drop-in equivalent replacement for NSURLSession with better blocks support
+# HTBURLSession
+
+## A drop-in equivalent replacement for NSURLSession with better blocks support
 
 Behaviour should be identical to NSURLSession as all actual work is forwarded to an NSURLSession
 instance internally. The only difference is that completion blocks and delegate callbacks are not
