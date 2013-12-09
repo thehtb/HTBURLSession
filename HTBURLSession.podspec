@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.homepage     = 'https://github.com/thehtb/HTBURLSession'
   s.authors      = { 'Mark Aufflick' => 'mark@htb.io' }
   s.summary      = 'A drop-in equivalent replacement for NSURLSession with better blocks support'
-  s.source       = { :git => 'git@github.com:thehtb/HTBURLSession.git',
+  s.source       = { :git => 'https://github.com/thehtb/HTBURLSession.git',
                      :tag => 'v0.0.1'  }
   s.source_files = 'HTBURLSession/*.{h,m}'
   s.requires_arc = true
