@@ -149,6 +149,14 @@ static void AccumulateDataTaskReceivedData(NSURLSessionTask * task, NSData * dat
 
 #pragma mark - Implemented delegate methods
 
+- (void)URLSession:(NSURLSession *)session didBecomeInvalidWithError:(NSError *)error
+{
+    if ([self.theUserDelegate respondsToSelector:@selector(URLSession:didBecomeInvalidWithError:)])
+        [self.theUserDelegate URLSession:session didBecomeInvalidWithError:error];
+    
+    _theURLSession = nil;
+}
+
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task
                         didCompleteWithError:(NSError *)error
 {
