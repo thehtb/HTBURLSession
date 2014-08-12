@@ -189,6 +189,14 @@ static void AccumulateDataTaskReceivedData(NSURLSessionTask * task, NSData * dat
 
 @end
 
+//TODO: In all of the below, we need to be storing or validating the taskIdentifier, since task objects are reused
+// in the normal case this is fine because we remove the associated key, but if a task is cancelled this won't happen
+// which is also only a problem if the next caller doesn't use a completion block.
+
+// Alternatively we could use a thread safe container rather than associated objects, the key being sessionIdentifier
+// (which is unique for a single session, ie this). Performance not too critical since it's not accessed a lot.
+
+
 #define AssociatedObjectForKey(key) objc_getAssociatedObject(task, (__bridge void *)key)
 #define RemoveAssociatedKey(key) objc_setAssociatedObject(task, (__bridge void *)key, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC)
 
